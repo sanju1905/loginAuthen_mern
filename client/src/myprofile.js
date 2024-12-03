@@ -8,7 +8,7 @@ const Myprofile = () => {
     const [token,setToken] = useContext(store);
     const [data,setData] = useState(null);
     useEffect(() =>{
-        axios.get('http://localhost:5000/myprofile',{
+        axios.get('https://loginauthen-mern.onrender.com/myprofile',{
             headers: {
                 'x-token' : token
             }

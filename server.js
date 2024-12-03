@@ -8,9 +8,7 @@ const cors=require('cors');
 
 const middleware=require('./middleware');
 app=express();
-app.use(cors({
-    origin:"*"
-}))
+app.use(cors())
 //app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 mongoose.connect('mongodb+srv://sanjay:sanjay@cluster0.fjcbkym.mongodb.net/?retryWrites=true&w=majority').then(

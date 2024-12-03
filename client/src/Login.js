@@ -15,7 +15,7 @@ const Login = () => {
     }
     const submitHandler = e =>{
         e.preventDefault();
-        axios.post('http://localhost:5000/login',data).then(
+        axios.post('https://loginauthen-mern.onrender.com/login',data).then(
             res => setToken(res.data.token)
         )
     }

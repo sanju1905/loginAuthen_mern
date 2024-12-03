@@ -29,7 +29,7 @@ const Update = () => {
         }
 
         try {
-            const res = await axios.put('http://localhost:5000/updatepassword', {
+            const res = await axios.put('https://loginauthen-mern.onrender.com/updatepassword', {
                 email: data.email,
                 password: data.password,
                 confirmpassword: data.confirmpassword

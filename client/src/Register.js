@@ -13,7 +13,7 @@ const Register = () => {
     }
     const submitHandler = e =>{
         e.preventDefault();
-        axios.post('http://localhost:5000/addDetails',data).then(
+        axios.post('https://loginauthen-mern.onrender.com/addDetails',data).then(
             res => {alert(res.data);setData({
                 name:'',
                 email:'',
