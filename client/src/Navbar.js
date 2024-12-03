@@ -9,6 +9,7 @@ const Nav = () => {
       <ul>
           <Link to='/register' ><li>Register</li></Link>
           <Link to='/login' ><li>Login</li></Link>
+          <Link to='/update'><li>Update</li></Link>
       </ul>
       </form>
     )

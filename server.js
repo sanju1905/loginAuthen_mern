@@ -143,3 +143,31 @@ app.get('/',(req,res)=>
 });
 
 
+
+app.put('/updatepassword', async (req, res) => {
+    try {
+        const { email, password, confirmpassword } = req.body;
+        console.log(email);
+
+        // Find user by email (should use findOne to get a single document)
+        const user = await Details.findOne({ email });
+        if (!user) {
+            return res.status(404).send("User not found");
+        }
+
+        // Validate password and confirm password
+        if (password !== confirmpassword) {
+            return res.status(400).send("Passwords do not match");
+        }
+
+        // Update the user's password
+        user.password = password;
+        await user.save();  // Save the updated user
+
+        return res.status(200).json({ message: "Password updated successfully", updatedUser: user });
+
+    } catch (err) {
+        console.error(err.message);
+        return res.status(500).send("Server Error");
+    }
+});
